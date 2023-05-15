@@ -9,14 +9,14 @@ import UpdatePage from './views/UpdatePage';
 function App() {
   return (
     <div className="App">
-      <h1>Product Manager</h1>
+      {/* <h1>Product Manager</h1>
       <p> <Link to="/"> Dashboard</Link> | 
       <Link to="/new"> Create a new product</Link>
-      </p>
+      </p> */}
 
       <Routes>
         <Route path="/" element={<DashboardPage />} />
-        <Route path="/new" element={<CreatePage />} />
+        {/* <Route path="/new" element={<CreatePage />} /> */}
         <Route path="/:id" element={<DetailsPage />} />
         <Route path="/edit/:id" element={<UpdatePage />} />
       </Routes>
