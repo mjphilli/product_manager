@@ -6,6 +6,12 @@ import ProductList from '../components/ProductList'
 const DashboardPage = () => {
   const [productList, setProductList] = useState([])
 
+  const removeFromDom = (deleteId) => {
+    const filteredList = productList.filter((eachProduct) =>
+        eachProduct._id !== deleteId)
+    setProductList(filteredList)
+}
+
   useEffect(() => {
     axios.get(`http://localhost:8000/api/products`)
       .then(response => {
@@ -19,7 +25,7 @@ const DashboardPage = () => {
       <div><h1>Product Manager</h1></div>
       <CreateForm />
       <div><h1>All Products:</h1></div>
-      <ProductList productList={productList} />
+      <ProductList productList={productList} onDelete={removeFromDom} />
     </div>
   )
 }

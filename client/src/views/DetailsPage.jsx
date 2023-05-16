@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import DeleteProduct from '../components/DeleteProduct'
 
@@ -11,6 +11,8 @@ const DetailsPage = () => {
   const [product, setProduct] = useState()
 
   const { id } = useParams()
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/products/${id}`)
@@ -31,7 +33,7 @@ const DetailsPage = () => {
           </div> :
           <h1>Loading...</h1>
       }
-      <DeleteProduct id={id} />
+      <DeleteProduct id={id} onDelete={()=>navigate(`/`)} />
     </div>
   )
 }

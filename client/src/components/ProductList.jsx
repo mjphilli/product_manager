@@ -17,7 +17,7 @@ const ProductList = (props) => {
                                     <Link to={`/${eachProduct._id}/edit`}>Edit</Link>
                                 </td>
                                 <td>
-                                    <DeleteProduct id={eachProduct._id} />
+                                    <DeleteProduct id={eachProduct._id} onDelete={props.onDelete} />
                                 </td>
                             </tr>
                         ))
