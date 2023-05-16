@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom'
 // 3. logic after submit: redirect: useNavigate
 
 const CreateForm = () => {
-    // const [productList, setProductList] = useState([]);
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState(0)
     const [description, setDescription] = useState("")
@@ -20,7 +19,6 @@ const CreateForm = () => {
         axios.post(`http://localhost:8000/api/products`, { title, price, description })
             .then(response => {
                 navigate(`/`)
-                // setProductList([...productList, response.data])
             })
             .catch(err => console.log(err))
     }
