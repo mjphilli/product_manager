@@ -19,7 +19,7 @@ const DashboardPage = () => {
       <div><h1>Product Manager</h1></div>
       <CreateForm />
       <div><h1>All Products:</h1></div>
-      <ProductList productList={productList}/>
+      <ProductList productList={productList} />
     </div>
   )
 }

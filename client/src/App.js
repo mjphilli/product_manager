@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/:id" element={<DetailsPage />} />
-        <Route path="/edit/:id" element={<UpdatePage />} />
+        <Route path="/:id/edit" element={<UpdatePage />} />
       </Routes>
     </div>
   );
