@@ -8,9 +8,13 @@ const DashboardPage = () => {
 
   const removeFromDom = (deleteId) => {
     const filteredList = productList.filter((eachProduct) =>
-        eachProduct._id !== deleteId)
+      eachProduct._id !== deleteId)
     setProductList(filteredList)
-}
+  }
+
+  const addToDom = (product) => {
+    setProductList([...productList, product])
+  }
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/products`)
@@ -23,7 +27,7 @@ const DashboardPage = () => {
   return (
     <div>
       <div><h1>Product Manager</h1></div>
-      <CreateForm />
+      <CreateForm onSuccess={addToDom} />
       <div><h1>All Products:</h1></div>
       <ProductList productList={productList} onDelete={removeFromDom} />
     </div>
